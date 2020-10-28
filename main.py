@@ -7,6 +7,7 @@ import numpy as np
 #Read webcam
 capture = cv2.VideoCapture(0)
 
+
 # Read image
 # im = cv2.imread("blob.jpg", cv2.IMREAD_GRAYSCALE)
 
@@ -59,8 +60,8 @@ capture = cv2.VideoCapture(0)
 params = cv2.SimpleBlobDetector_Params()
 
 # Change thresholds
-#params.minThreshold = 10
-#params.maxThreshold = 200
+params.minThreshold = 10
+params.maxThreshold = 200
 
 # Filter by Area.
 params.filterByArea = True
@@ -70,16 +71,16 @@ params.minArea = 1500
 params.blobColor = 255
 
 # Filter by Circularity
-#params.filterByCircularity = True
-#params.minCircularity = 0.1
+params.filterByCircularity = True
+params.minCircularity = 0.1
 
 # Filter by Convexity
 #params.filterByConvexity = True
 #params.minConvexity = 0.87
 
 # Filter by Inertia
-#params.filterByInertia = True
-#params.minInertiaRatio = 0.01
+params.filterByInertia = True
+params.minInertiaRatio = 0.01
 
 # Create a detector with the parameters
 ver = (cv2.__version__).split('.')
